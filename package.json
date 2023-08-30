@@ -2,11 +2,7 @@
   "name": "myweb",
   "version": "0.1.0",
   "private": true,
-<<<<<<< HEAD
   "homepage": "https://teddyanyanga.io",
-=======
-  "homepage": "https://TeddPaul13.github.io/teddpaul13.github.io",
->>>>>>> 1999aa9453e09db9ca49c27dc646b2d01b037b50
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
