@@ -16,6 +16,7 @@ import Myskills from "./components/Myskills";
 import Myprojects from "./components/Myprojects";
 import ScrollButton from "./components/ScrollButton";
 import resume from "./TeddyResume.pdf"
+import SkillsList from "./components/SkillsList";
 
 function App() {
 
@@ -53,7 +54,7 @@ function App() {
               <br />I am Teddy Paul Anyanga
             </h2>
             <p>
-            An adaptable <span className="fs-4">Software Engineer</span> with knowledge of web application development, configuration management, RESTful API development and database design and development. 
+            An adaptable <span className="fs-4">Software Developer</span> with knowledge of web application development, configuration management, RESTful API development and database design and development. 
             Recently completed a UTS industry accredited Certificate in Software Engineering, which has an emphasis on practical skills training and projects to design and implement software solutions. 
             I am also a Certified Associate in Project Management with a Bsc. of Mechatronic Engineering and a Master of Business and Project Management. 
             With great problem solving, critical and logical thinking skills, I enjoy creating solutions through programmming. 
@@ -62,10 +63,11 @@ function App() {
           </div>
         </div>
         {/* My skills */}
-        <div className="headers mb-4 d-flex justify-content-center ">
+        <div className="headers mb-2 d-flex justify-content-center ">
         <h2>My Skills</h2>
       </div>
-        <Myskills />
+      <div><p>I have experience with these technologies</p></div>
+        <SkillsList />
         {/* My porjects */}
         <div className="headers mb-4 d-flex justify-content-center">
           <h2 id="myprojects">My Projects</h2>
