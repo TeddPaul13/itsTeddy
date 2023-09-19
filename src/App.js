@@ -15,7 +15,7 @@ import fts from "./Tractor2.png";
 import Myskills from "./components/Myskills";
 import Myprojects from "./components/Myprojects";
 import ScrollButton from "./components/ScrollButton";
-import resume from "./TeddyResume.pdf"
+import resume from "./Teddy_Software_Resume.pdf"
 import SkillsList from "./components/SkillsList";
 import ButtonMoreSkills from "./components/ButtonMoreSkills";
 
