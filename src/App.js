@@ -15,7 +15,9 @@ import fts from "./Tractor2.png";
 import Myskills from "./components/Myskills";
 import Myprojects from "./components/Myprojects";
 import ScrollButton from "./components/ScrollButton";
-import resume from "./TeddyResume.pdf"
+import resume from "./Teddy_Software_Resume.pdf"
+import SkillsList from "./components/SkillsList";
+import ButtonMoreSkills from "./components/ButtonMoreSkills";
 
 function App() {
 
@@ -32,9 +34,8 @@ function App() {
             <Nav className="d-flex justify-content-center">
               <Nav.Link href="#myprojects">Projects</Nav.Link>
               <Nav.Link href="#mycontacts">Contacts</Nav.Link>
+              {/* href Link to download resume */}
               <a href={resume} download="Teddy's Resume" target="_blank" rel="noreferrer"><Button variant="outline-info">Download CV</Button></a>
-
-              {/* <button id="cvPrint" onclick="location.href='TeddyResume.pdf';" target="blank">View Downloadable Pdf</button> */}
             </Nav>
           </Container>
         </Navbar>
@@ -47,13 +48,13 @@ function App() {
             ></img>
            
           </div>
-          <div className="col-md-8 info">
+          <div className="col-md-8 info mb-4">
             <h2>
               Hi there,
               <br />I am Teddy Paul Anyanga
             </h2>
             <p>
-            An adaptable <span className="fs-4">Software Engineer</span> with knowledge of web application development, configuration management, RESTful API development and database design and development. 
+            An adaptable <span className="fs-4">Software Developer</span> with knowledge of web application development, configuration management, RESTful API development and database design and development. 
             Recently completed a UTS industry accredited Certificate in Software Engineering, which has an emphasis on practical skills training and projects to design and implement software solutions. 
             I am also a Certified Associate in Project Management with a Bsc. of Mechatronic Engineering and a Master of Business and Project Management. 
             With great problem solving, critical and logical thinking skills, I enjoy creating solutions through programmming. 
@@ -62,10 +63,12 @@ function App() {
           </div>
         </div>
         {/* My skills */}
-        <div className="headers mb-4 d-flex justify-content-center ">
+        {/* <div className="headers mb-2 d-flex justify-content-center ">
         <h2>My Skills</h2>
-      </div>
-        <Myskills />
+      </div> */}
+      
+        <SkillsList />
+        <ButtonMoreSkills/>
         {/* My porjects */}
         <div className="headers mb-4 d-flex justify-content-center">
           <h2 id="myprojects">My Projects</h2>
