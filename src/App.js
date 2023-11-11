@@ -11,6 +11,7 @@ import { Link } from "react-router-dom";
 import { At, Linkedin, Geo, Github } from "react-bootstrap-icons";
 
 import potrait from "./potrait.jpg";
+import corporatePotrait from "./CorporatePortraitTeddy.jpg"
 import fts from "./Tractor2.png";
 import Myskills from "./components/Myskills";
 import Myprojects from "./components/Myprojects";
@@ -18,6 +19,7 @@ import ScrollButton from "./components/ScrollButton";
 import resume from "./Teddy_Software_Resume.pdf"
 import SkillsList from "./components/SkillsList";
 import ButtonMoreSkills from "./components/ButtonMoreSkills";
+import RequestUserEmail from "./components/RequestEmailBeforeDownload";
 
 function App() {
 
@@ -35,14 +37,15 @@ function App() {
               <Nav.Link href="#myprojects">Projects</Nav.Link>
               <Nav.Link href="#mycontacts">Contacts</Nav.Link>
               {/* href Link to download resume */}
-              <a href={resume} download="Teddy's Resume" target="_blank" rel="noreferrer"><Button variant="outline-info">Download CV</Button></a>
+              <RequestUserEmail/>
+              {/* <a href={resume} download="Teddy's Resume" target="_blank" rel="noreferrer"><Button variant="outline-info">Download CV</Button></a> */}
             </Nav>
           </Container>
         </Navbar>
         <div className="row">
           <div className="col-md-4 potraitDiv mb-4">
             <img
-              src={potrait}
+              src={corporatePotrait}
               alt="My Potrait"
               className=" img-fluid rounded-circle myportrait"
             ></img>
@@ -96,7 +99,9 @@ function App() {
             </p>
           </div>
         </div>
+        
         <ScrollButton />
+        
       </Container>
     </div>
   );
