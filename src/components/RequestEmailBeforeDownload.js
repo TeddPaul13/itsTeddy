@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useState, useRef} from 'react';
+import emailjs from '@emailjs/browser';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Modal from 'react-bootstrap/Modal';
@@ -6,6 +7,9 @@ import resume from "../Teddy_Software_Resume.pdf"
 
 function RequestUserEmail() {
   const [show, setShow] = useState(false);
+  const [sender_name, setSender_name] = useState(" ")
+  const [sender_email, setSender_email] = useState(" ")
+  
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -16,9 +20,7 @@ function RequestUserEmail() {
     //optional - allow only coporate email address.
   }
 
-  function sendEmailForDownload(){
-    // TODO Send Email for every download.
-  }
+  // Send Email for every download.
 
   function downloadResume(){
     const anchor = document.createElement("a");
@@ -32,6 +34,35 @@ function RequestUserEmail() {
 
     handleClose()
   }
+ 
+
+  const sendEmailForDownload = (e) => {
+    e.preventDefault();
+
+    const service_id = 'service_98mdcg3';
+    const template_id = 'template_t9684fw';
+    const public_key = 'IrkTjBWVD4j3FzvhC';
+
+    const templateParams ={
+      from_name: sender_name,
+      to_name: 'Teddy',
+      reply_to: sender_email,
+
+    }
+     
+    emailjs.send(service_id, template_id, templateParams, public_key)
+    .then((response) => {
+        console.log("Email sent succesfully", response);
+        setSender_email(" ");
+        setSender_name(" ");
+    })
+    .catch((error) => {
+      console.log("Error sending email", error);
+    })
+
+    downloadResume();
+  }
+
 
   
 
@@ -43,16 +74,28 @@ function RequestUserEmail() {
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Please Enter Your Email Address</Modal.Title>
+          <Modal.Title>Please Enter Your Details</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <Form>
+          <Form  onSubmit={sendEmailForDownload}>
             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+            <Form.Label>Name</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="e.g: Teddy Anyanga"
+                name="sender_name"
+                value={sender_name}
+                onChange={(e) => setSender_name(e.target.value)}
+                autoFocus
+              />
               <Form.Label>Email address</Form.Label>
               <Form.Control
                 type="email"
                 placeholder="name@example.com"
-                autoFocus
+                name="sender_email"
+                value={sender_email}
+                onChange={(e) => setSender_email(e.target.value)}
+                
               />
             </Form.Group>
             <p> Your email address is for tracking purposes only. I receive a push notification for every successful download. This helps me keep track of who has my Resume.</p>
@@ -62,7 +105,10 @@ function RequestUserEmail() {
           <Button variant="secondary" onClick={handleClose}>
             Close
           </Button>
-          <Button variant="primary" onClick={downloadResume}>
+          <Button variant="outline-info" onClick={downloadResume}>
+            View Web Version
+          </Button>
+          <Button variant="primary" onClick={sendEmailForDownload}>
             Download
           </Button>
         </Modal.Footer>
