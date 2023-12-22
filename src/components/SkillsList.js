@@ -14,12 +14,12 @@ function SkillsList() {
           <Col className="mb-3">
             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original-wordmark.svg" alt="React Logo" title="React" />
           </Col>
-          <Col className="mb-3">
+          {/* <Col className="mb-3">
             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original-wordmark.svg" alt="HTML Logo" title="HTML" />
           </Col>
           <Col className="mb-3">
             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original-wordmark.svg" alt="CSS Logo" title="CSS3" />
-          </Col>
+          </Col> */}
           <Col className="mb-3">
             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original-wordmark.svg" alt="Github Logo" title="GitHub" />
           </Col>
@@ -46,9 +46,9 @@ function SkillsList() {
             <Col className="mb-3">
             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/materialui/materialui-original.svg" alt="MUI Logo" title="MUI"/>
             </Col>
-            <Col className="mb-3">
+            {/* <Col className="mb-3">
             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/slack/slack-original.svg" alt="Slack Logo" title="Slack"/>
-            </Col>
+            </Col> */}
         </Row>
       </Container>
     </div>

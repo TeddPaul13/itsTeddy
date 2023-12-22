@@ -22,7 +22,7 @@ function AdditionalSkills() {
           <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma Logo" title="Figma"/>
           </Col>
           <Col className="mb-3">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="AWS Logo" title="AWS"/>
+            <img src= "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original-wordmark.svg" alt="Azure Logo" title="Azure"/>
           </Col>
           <Col className="mb-3">
           <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sequelize/sequelize-original-wordmark.svg" alt="Sequelize Logo" title="Sequelize"/>
