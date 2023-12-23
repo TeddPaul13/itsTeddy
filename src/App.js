@@ -36,9 +36,9 @@ function App() {
             <Nav className="d-flex justify-content-center">
               <Nav.Link href="#myprojects">Projects</Nav.Link>
               <Nav.Link href="#mycontacts">Contacts</Nav.Link>
-              {/* href Link to download resume */}
+              
               <RequestUserEmail />
-              {/* <a href={resume} download="Teddy's Resume" target="_blank" rel="noreferrer"><Button variant="outline-info">Download CV</Button></a> */}
+              
             </Nav>
           </Container>
         </Navbar>
@@ -78,10 +78,7 @@ function App() {
           <h2 id="myprojects">My Projects</h2>
         </div>
         <Myprojects />
-{/* 
-        <div className="headers mb-4 d-flex justify-content-center">
-          <h2 id="mycontacts">Lets connect</h2>
-        </div> */}
+
        <ContactDetails/>
 
         <ScrollButton />

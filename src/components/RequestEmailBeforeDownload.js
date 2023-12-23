@@ -4,7 +4,8 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Modal from "react-bootstrap/Modal";
 import resume from "../Teddy_Software_Resume.pdf";
-
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function RequestUserEmail() {
   const [show, setShow] = useState(false);
@@ -12,11 +13,10 @@ function RequestUserEmail() {
   const [sender_email, setSender_email] = useState(" ");
   const [errors, setErrors] = useState({});
 
-
   const handleClose = () => {
     setShow(false);
     setErrors({});
-  }
+  };
   const handleShow = () => setShow(true);
 
   // Validate form fields, error messages are shown under the respective form fields
@@ -45,7 +45,7 @@ function RequestUserEmail() {
     anchor.download = "Teddy Anyanga's Resume";
     document.body.appendChild(anchor);
     anchor.click();
-    document.body.removeChild(anchor);    
+    document.body.removeChild(anchor);
   }
 
   // Send Email for every download.
@@ -53,38 +53,43 @@ function RequestUserEmail() {
   const sendEmailForDownload = (e) => {
     e.preventDefault();
 
-    const errors = validateForm ({sender_name, sender_email});
+    const errors = validateForm({ sender_name, sender_email });
 
-    if (Object.keys(errors).length === 0){
+    if (Object.keys(errors).length === 0) {
+      const service_id = "service_98mdcg3";
+      const template_id = "template_t9684fw";
+      const public_key = "IrkTjBWVD4j3FzvhC";
 
-    const service_id = "service_98mdcg3";
-    const template_id = "template_t9684fw";
-    const public_key = "IrkTjBWVD4j3FzvhC";
+      const templateParams = {
+        from_name: sender_name,
+        to_name: "Teddy",
+        reply_to: sender_email,
+      };
 
-    const templateParams = {
-      from_name: sender_name,
-      to_name: "Teddy",
-      reply_to: sender_email,
-    };
-
-    emailjs
-      .send(service_id, template_id, templateParams, public_key)
-      .then((response) => {
-        console.log("Email sent succesfully", response);
-        setSender_email(" ");
-        setSender_name(" ");
-        downloadResume();
-        handleClose();
-      })
-      .catch((error) => {
-        console.log("Error sending email", error);
-      });
-    } else{
+      emailjs
+        .send(service_id, template_id, templateParams, public_key)
+        .then((response) => {
+          console.log("Email sent succesfully", response);
+          setSender_email(" ");
+          setSender_name(" ");
+          downloadResume();
+          handleClose();
+          displaySuccessToast();
+        })
+        .catch((error) => {
+          console.log("Error sending email", error);
+        });
+    } else {
       console.log("Validation errors", errors);
     }
-
-
-  
+    // TODO Explore displaying an Error toast if the download is not successful.
+    const displaySuccessToast = () => {
+      toast.success("Download Successful!", {
+        position: toast.POSITION.TOP_CENTER,
+        autoClose: 3000,
+      });
+      
+    };
   };
 
   return (
@@ -110,7 +115,9 @@ function RequestUserEmail() {
                 autoFocus
                 required
               />
-              {errors.sender_name && <p className="text-danger">{errors.sender_name}</p>}
+              {errors.sender_name && (
+                <p className="text-danger">{errors.sender_name}</p>
+              )}
               <Form.Label>Email address</Form.Label>
               <Form.Control
                 type="email"
@@ -120,7 +127,9 @@ function RequestUserEmail() {
                 onChange={(e) => setSender_email(e.target.value)}
                 required
               />
-              {errors.sender_email && <p className="text-danger">{errors.sender_email}</p>}
+              {errors.sender_email && (
+                <p className="text-danger">{errors.sender_email}</p>
+              )}
             </Form.Group>
             <p>
               {" "}
@@ -139,6 +148,7 @@ function RequestUserEmail() {
           </Button>
         </Modal.Footer>
       </Modal>
+      <ToastContainer />
     </>
   );
 }
