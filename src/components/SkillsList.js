@@ -29,14 +29,15 @@ function SkillsList() {
           <Col className="mb-3">
             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="Node Logo" title="Node" />
           </Col>
-        </Row>
-        <Row xs={2} md={4} lg={6} className="mb-4">
-            <Col className="mb-3">
+          <Col className="mb-3">
             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original-wordmark.svg" alt="Bootstrap" title="Bootstrap" />
             </Col>
             <Col className="mb-3">
             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original-wordmark.svg" alt="Git Logo" title="Git"/>
             </Col>
+        </Row>
+        <Row xs={2} md={4} lg={6} className="mb-4">
+            
             <Col className="mb-3">
             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original-wordmark.svg" alt="MySql Logo" title="MySql"/>
             </Col>
