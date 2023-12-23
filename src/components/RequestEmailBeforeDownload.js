@@ -82,7 +82,7 @@ function RequestUserEmail() {
     } else {
       console.log("Validation errors", errors);
     }
-    // TODO Explore displaying Error toast if the download is not successful.
+    // TODO Explore displaying an Error toast if the download is not successful.
     const displaySuccessToast = () => {
       toast.success("Download Successful!", {
         position: toast.POSITION.TOP_CENTER,
