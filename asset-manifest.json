@@ -1,8 +1,9 @@
 {
   "files": {
-    "main.css": "/static/css/main.7913bb6e.css",
-    "main.js": "/static/js/main.10fb5ff6.js",
+    "main.css": "/static/css/main.7db93343.css",
+    "main.js": "/static/js/main.20bb7058.js",
     "static/js/787.fb265414.chunk.js": "/static/js/787.fb265414.chunk.js",
+    "static/media/CorporatePortraitTeddy.jpg": "/static/media/CorporatePortraitTeddy.aa9bf8700183439a5a09.jpg",
     "static/media/Teddy_Software_Resume.pdf": "/static/media/Teddy_Software_Resume.91deeee750ae8705c2a1.pdf",
     "static/media/Tractor2.png": "/static/media/Tractor2.7a54cb09e2ba0e22ea6b.png",
     "static/media/potrait.jpg": "/static/media/potrait.bd355fb20efb42d7f03e.jpg",
@@ -11,12 +12,12 @@
     "static/media/bootstrap-icons.woff2?": "/static/media/bootstrap-icons.6d63d0501e5ed7b79dab.woff2",
     "static/media/AFL.png": "/static/media/AFL.2c98b8b97f0a726a9cfa.png",
     "index.html": "/index.html",
-    "main.7913bb6e.css.map": "/static/css/main.7913bb6e.css.map",
-    "main.10fb5ff6.js.map": "/static/js/main.10fb5ff6.js.map",
+    "main.7db93343.css.map": "/static/css/main.7db93343.css.map",
+    "main.20bb7058.js.map": "/static/js/main.20bb7058.js.map",
     "787.fb265414.chunk.js.map": "/static/js/787.fb265414.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.7913bb6e.css",
-    "static/js/main.10fb5ff6.js"
+    "static/css/main.7db93343.css",
+    "static/js/main.20bb7058.js"
   ]
 }
