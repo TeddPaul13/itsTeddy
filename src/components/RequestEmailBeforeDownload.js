@@ -88,7 +88,7 @@ function RequestUserEmail() {
         position: toast.POSITION.TOP_CENTER,
         autoClose: 3000,
       });
-      console.log("Test Toast");
+      
     };
   };
 
